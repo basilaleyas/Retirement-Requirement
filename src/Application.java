@@ -30,9 +30,19 @@ public class Application {
 	//Current Age, Output
 	System.out.println("Enter your current Age: ");
 	ca = input.nextInt();
+	if (ca <= 0) {
+		System.out.println("Invalid number, you cannot be an age 0");
+		
+		System.exit(0);
+	}
 	//Year expected to retirement age
 	System.out.println("Retirement Age: " );
 	ra = input.nextInt();
+	if (ca >= ra) {
+		System.out.println("Invalid number, Current age shouldn't be higher than retirement age");
+		
+		System.exit(0);
+	}
 	// Current Monthly Earning
 	System.out.println("Current Monthly Earning: ");
 	cye = input.nextDouble();
@@ -60,9 +70,12 @@ public class Application {
 	// Years difference 
 	dAge = ra - ca;
 	
-	//With current earning
+	//With current earning + interest
 	cInt = (cye * ci) + cye;
-	System.out.println("You have" + dAge + " Years left for Retirement");
+	
+	
+	
+	System.out.println("You have " + dAge + " Years left for Retirement");
 	System.out.println(cInt);
 	
 	
