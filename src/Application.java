@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Rcalculator {
@@ -11,20 +13,31 @@ public class Application {
 	
 	Scanner input = new Scanner(System.in);
 	
-	// ca = current age, ra = retirement age
+	/* ca = current age
+	ra = retirement age*/
+	
 	int ca, ra;
-	/*cs = current saving, ci = current interest rate, cye = current earning
+	
+	/*cs = current saving, ci = current interest rate
+	 * cye = current earning
    * pfye = projected future yearly earning 
-	efi = Maximum future interest rate, emi = Minimum future interest rate
-	fi = future income, yi = yearly income */
+	efi = Maximum future interest rate
+	 emi = Minimum future interest rate
+	fi = future income
+	yi = yearly income */
+	
 	double cs, ci, cye, pfye, efi,emi, fi, yi;
+	
+	
 	/*dAge = Difference from  Retirement age to current age
 	 *cInt = Current interest rate average
 	 * hInt = High interest rate average
 	 * mInt = Minimum interest rate average
+	 * ySi = Yearly salary Increase
+	 * yTr = Yearly times retirement years left
 	 */
 	int dAge;
-	double  cInt, hInt, mInt;
+	double  cInt, hInt, mInt,ySi,yTr;
 	
 	
 	//Current Age, Output
@@ -44,26 +57,16 @@ public class Application {
 		System.exit(0);
 	}
 	// Current Monthly Earning
-	System.out.println("Current Monthly Earning: ");
+	System.out.println("Current Yearly Earning: ");
 	cye = input.nextDouble();
-	//Projected future earning
-	System.out.println("Estimated future earning: ");
-	pfye = input.nextDouble();
 	//Currently saved Output
 	System.out.println("Enter your current saving: ");
 	cs = input.nextDouble();
 	//Current Interest rate.
-	System.out.println("Enter current interest rate: ");
+	System.out.println("Enter current savings rate: ");
 	ci = input.nextDouble();
 	ci /= 100.0;
-	// Maximum Future Interest rate
-	System.out.println("Maximum interest rate: ");
-	efi = input.nextDouble();
-	efi /= 100.0;
-	//Minimum interest rate
-	System.out.println("Mimum Interest rate: ");
-	emi = input.nextDouble();
-	emi /= 100.0;
+
 	
 	
 	
@@ -71,12 +74,23 @@ public class Application {
 	dAge = ra - ca;
 	
 	//With current earning + interest
-	cInt = (cye * ci) + cye;
+	cInt = (cye * ci) ;
+	
+	//Yearly Increase in Salary about 3.8%
+	
+	ySi = (cye * 0.038) + cye;  
+	
+	//Yearly Increase time retirement years left
+	
+	yTr = ySi * dAge;
+	
+	//
 	
 	
 	
 	System.out.println("You have " + dAge + " Years left for Retirement");
-	System.out.println(cInt);
+	System.out.println(ySi);
+	System.out.println(yTr);
 	
 	
 	
