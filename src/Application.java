@@ -19,10 +19,12 @@ public class Application {
 	fi = future income, yi = yearly income */
 	double cs, ci, cye, pfye, efi,emi, fi, yi;
 	/*dAge = Difference from  Retirement age to current age
+	 *cInt = Current interest rate average
 	 * hInt = High interest rate average
 	 * mInt = Minimum interest rate average
 	 */
-	double dAge, hInt, mInt;
+	int dAge;
+	double  cInt, hInt, mInt;
 	
 	
 	//Current Age, Output
@@ -43,17 +45,25 @@ public class Application {
 	//Current Interest rate.
 	System.out.println("Enter current interest rate: ");
 	ci = input.nextDouble();
+	ci /= 100.0;
 	// Maximum Future Interest rate
 	System.out.println("Maximum interest rate: ");
 	efi = input.nextDouble();
+	efi /= 100.0;
 	//Minimum interest rate
 	System.out.println("Mimum Interest rate: ");
 	emi = input.nextDouble();
+	emi /= 100.0;
 	
 	
 	
-	
+	// Years difference 
 	dAge = ra - ca;
+	
+	//With current earning
+	cInt = (cye * ci) + cye;
+	System.out.println("You have" + dAge + " Years left for Retirement");
+	System.out.println(cInt);
 	
 	
 	
