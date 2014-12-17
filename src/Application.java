@@ -11,17 +11,19 @@ public class Application {
 	
 	Scanner input = new Scanner(System.in);
 	
-  /*cs = current saving, ci = current interest rate 
+	// ca = current age, ra = retirement age
+	int ca, ra;
+	/*cs = current saving, ci = current interest rate, cye = current earning
+   * pfye = projected future yearly earning 
 	efi = Maximum future interest rate, emi = Minimum future interest rate
 	fi = future income, yi = yearly income */
-	double cs, ci, efi,emi, fi, yi;
+	double cs, ci, cye, pfye, efi,emi, fi, yi;
 	/*dAge = Difference from  Retirement age to current age
 	 * hInt = High interest rate average
 	 * mInt = Minimum interest rate average
 	 */
 	double dAge, hInt, mInt;
-	// ca = current age, ra = retirement age
-	int ca, ra;
+	
 	
 	//Current Age, Output
 	System.out.println("Enter your current Age: ");
@@ -29,6 +31,12 @@ public class Application {
 	//Year expected to retirement age
 	System.out.println("Retirement Age: " );
 	ra = input.nextInt();
+	// Current Monthly Earning
+	System.out.println("Current Monthly Earning: ");
+	cye = input.nextDouble();
+	//Projected future earning
+	System.out.println("Estimated future earning: ");
+	pfye = input.nextDouble();
 	//Currently saved Output
 	System.out.println("Enter your current saving: ");
 	cs = input.nextDouble();
@@ -44,6 +52,8 @@ public class Application {
 	
 	
 	
+	
+	dAge = ra - ca;
 	
 	
 	
