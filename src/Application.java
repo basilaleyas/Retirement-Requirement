@@ -11,10 +11,16 @@ public class Application {
 	
 	Scanner input = new Scanner(System.in);
 	
-	// ca = current age, ra = retirement age, cs = current saving, ci = current interest rate 
-	// efi = Maximum future interest rate, emi = Minimum future interest rate
-	//fi = future income, yi = yearly income 
+  /*cs = current saving, ci = current interest rate 
+	efi = Maximum future interest rate, emi = Minimum future interest rate
+	fi = future income, yi = yearly income */
 	double cs, ci, efi,emi, fi, yi;
+	/*dAge = Difference from  Retirement age to current age
+	 * hInt = High interest rate average
+	 * mInt = Minimum interest rate average
+	 */
+	double dAge, hInt, mInt;
+	// ca = current age, ra = retirement age
 	int ca, ra;
 	
 	//Current Age, Output
